@@ -1,9 +1,7 @@
 name: Performance
 
 on:
-  pull_request:
-  merge_group:
-    branches: main
+  workflow_dispatch:
 
 env:
   # Maximum allowed regression percentage for any single benchmark.
@@ -13,7 +11,7 @@ env:
 
 jobs:
   benchmark:
-    runs-on: ubuntu-latest
+    runs-on: monkci-ubuntu-24.04-32
     steps:
       - uses: actions/checkout@v6
         name: Check out PR branch

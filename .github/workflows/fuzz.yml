@@ -1,13 +1,11 @@
 name: Fuzz
 
 on:
-  schedule:
-    - cron: '0 3 * * *'  # Nightly at 3am UTC
   workflow_dispatch:       # Allow manual triggering
 
 jobs:
   fuzz:
-    runs-on: ubuntu-latest
+    runs-on: monkci-ubuntu-24.04-32
     env:
       CC: clang
       CXX: clang++

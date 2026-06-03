@@ -1,17 +1,13 @@
 name: "Nix Flake"
 on:
-  push:
-    branches: main
-  pull_request:
-  merge_group:
-    branches: main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [monkci-ubuntu-24.04-32, macos-latest]
 
     steps:
     - uses: cachix/install-nix-action@v31
