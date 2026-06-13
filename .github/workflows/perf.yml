@@ -11,7 +11,7 @@ env:
 
 jobs:
   benchmark:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@v6
         name: Check out PR branch

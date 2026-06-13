@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [monkci-ubuntu-24.04-32, macos-latest]
+        os: [monkci-ubuntu-24.04-4, macos-latest]
 
     steps:
     - uses: cachix/install-nix-action@v31

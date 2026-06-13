@@ -5,7 +5,7 @@ on:
 
 jobs:
   fuzz:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     env:
       CC: clang
       CXX: clang++

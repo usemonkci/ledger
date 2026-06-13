@@ -22,7 +22,7 @@ jobs:
       matrix:
         config:
           - {
-            os: monkci-ubuntu-24.04-32,
+            os: monkci-ubuntu-24.04-4,
             name: Ubuntu,
             PY_MAJOR: 3,
             cmake_args: -DUSE_PYTHON=ON -DUSE_GPGME=ON
@@ -34,7 +34,7 @@ jobs:
             cmake_args: -DUSE_PYTHON=ON -DUSE_GPGME=ON
           }
           - {
-            os: monkci-ubuntu-24.04-32,
+            os: monkci-ubuntu-24.04-4,
             name: Ubuntu-Sanitizers,
             PY_MAJOR: 3,
             cmake_args: -DUSE_SANITIZERS=ON
@@ -141,13 +141,13 @@ jobs:
         run: cmake --build build
 
   coverage:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - name: Free disk space
         # LLVM coverage instrumentation generates several GB of .profraw data
-        # across the full test suite; the default monkci-ubuntu-24.04-32 image has been
+        # across the full test suite; the default monkci-ubuntu-24.04-4 image has been
         # running out of disk space mid-test, aborting the runner with
-        # "No space left on device".  GitHub provisions the monkci-ubuntu-24.04-32
+        # "No space left on device".  GitHub provisions the monkci-ubuntu-24.04-4
         # image with either ~145 GB or ~72 GB of root disk depending on
         # availability, so we clean aggressively here to leave headroom on
         # the smaller variant.  Remove preinstalled toolchains that this job
@@ -250,7 +250,7 @@ jobs:
           if-no-files-found: error
 
   packaging:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@v6
         name: Check out repository code
@@ -304,7 +304,7 @@ jobs:
           if-no-files-found: error
 
   doxygen:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@v6
         name: Check out repository code
@@ -331,7 +331,7 @@ jobs:
           if-no-files-found: error
 
   manual:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@v6
         name: Check out repository code
