@@ -553,7 +553,7 @@ class PrepareBuild(CommandLineApp):
                     is_ubuntu = True
                     self.log.info('Looks like you are using APT on Ubuntu ' + release)
                     packages = [
-                        'sudo', 'apt-get', 'install',
+                        'sudo', 'apt-get', 'install', '-y',
                         'build-essential',
                         'libgpgme-dev',
                         'libgpgmepp-dev',
@@ -664,7 +664,7 @@ class PrepareBuild(CommandLineApp):
                 if release.startswith('CentOS'):
                     self.log.info('Looks like you are using YUM on CentOS')
                     packages = [
-                        'sudo', 'yum', 'install',
+                        'sudo', 'yum', 'install', '-y',
                         'gcc',
                         'gcc-c++',
                         'compat-gcc-*',
@@ -692,7 +692,7 @@ class PrepareBuild(CommandLineApp):
                 elif release.startswith('Fedora release 20'):
                     self.log.info('Looks like you are using YUM on Fedora 20')
                     packages = [
-                        'sudo', 'yum', 'install',
+                        'sudo', 'yum', 'install', '-y',
                         'boost-devel',
                         'bzip2-devel',
                         'cmake',
