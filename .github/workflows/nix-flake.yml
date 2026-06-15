@@ -16,8 +16,5 @@ jobs:
 
     - uses: actions/checkout@v6
 
-    - name: Install lefthook
-      run: npm install -g lefthook
-
     - name: Ensure nix flake builds
-      run: lefthook run nix-flake-build
+      run: npx lefthook run nix-flake-build
